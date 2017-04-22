@@ -1,0 +1,446 @@
+﻿Kurz:ASP.NET - Building a Web App with ASP.NET Core, MVC, EF Core, and Angular
+===================================================================
+What Is ASP.NET Core? / Installing ASP.NET Core::
+--------------------------------------------------
+www.dot.net (https://www.microsoft.com/net)
+- https://www.microsoft.com/net/download/core#/runtime
+- plugin do VS (nové možnosti projektů pro ASP.NET) 
+
+===================================================================
+What Is ASP.NET Core? / Hello World ASP.NET Core::
+--------------------------------------------------
+Prvně si ukažme, jak obsluhovat ASP.NET Core projekty přes konzoli.
+
+cmd příkazy
+>cls // vyčištění obrazovky
+>dir // obsah složky
+>md helloworld // založení složky
+>notepad Program.cs // prohlížení+editace souboru (v notepadu)
+>dotnet --help // nápověda
+1.>dotnet new  // založení nového projektu v aktuální složce
+2.>dotnet restore // obnovení dependencí (podle project.json)
+3.>dotnet build // kompilace
+3.>dotnet run // kompilace + spuštění projektu
+>dotnet test // spustí Unit testy
+>dotnet pack // vytvoří NuGet package
+
+>notepad project.json
+- verze projektu
+- dependence (nuget packages) ... Microsoft.NETCore.App - základní knihovna
+- sekce povolení na čem aplikace poběží ("netcoreapp1.0" - crossplatform, "net46" - pouze desktop resp. potřebuje full version framework)
+
+
+
+
+===================================================================
+What Is ASP.NET Core? / VS Core::
+--------------------------------------------------
+VS Code - free cross-platform IDE pro vývoj
+Node.js - JavaScript runtime (https://nodejs.org/en/)
+NPM - Node Package Manager for JavaScript(https://www.npmjs.com/)
+YO (Yeoman) - generátor projektu (http://yeoman.io/)
+--------------------------------------------------
+
+- code.visualstudio.com // light version of VS (free a crossplatform - win/linux/mac)
+- staré verze neměly nativně zvýraznění syntaxe pro C#
+
+cmd: (jsme ve složce projektu)
+>code . // spuštění projektu (ta tečka je podstatná!)
+
+YO: (Yeoman Generátor)
+- http://yeoman.io/generators/
+- Code neumí zakládat projekty, k tomu slouží YO.
+- potřebujeme mít nainstalované Node NPM verzi
+	(nodejs.org)
+>node --version // ověření zda máme nainstalovaný nodejs a jaké verze
+>npm --version // ověření NPM - Node Package Manager
+
+>npm install yo -g // instalace YO (-g general, pro všechny)
+>npm install generator-aspnet -g  // 
+
+>yo aspnet //spuštění menu instalátoru aplikace založí i složku(web,consol,library,unit test,...)
+ - web application
+ - Bootstrap
+ - Název: FunWithYo 
+> cd funWithYo
+>dotnet restore
+>dotnet run // spustí web aplikaci (dostupná na localhost:5000)
+>ctrl+c
+>code . // spuštění aplikace v VS Code
+
+===================================================================
+What Is ASP.NET Core? / Visual Studio::
+--------------------------------------------------
+
+
+
+===================================================================
+What Is ASP.NET Core? / Where We're Headed::
+--------------------------------------------------
+
+
+===================================================================
+What Is ASP.NET Core? / Summary::
+--------------------------------------------------
+
+===================================================================
+Serving Files in ASP.NET 5::
+--------------------------------------------------
+project.json - soubor ve kterém se konfigurují dependence (načtení knihoven a specifikace jejich verzí) (dependence = nuget balíčky, které projekt vyžaduje)
+
+Startup.cs:
+- ConfigureServices
+- Configure:
+	- app.UseDefaultFiles(); // najde si vhodny soubor ve wwwroot
+	- app.UseStaticFiles(); // z nuget balíčku Microsoft.AspNetCore.StaticFiles, moznost zavolat index.html
+
+
+===================================================================
+			HTML and CSS Basics
+===================================================================
+
+===================================================================
+HTML Basics::
+--------------------------------------------------
+index.html:
+- <!DOCTYPE html> - kódování stránky
+- <html> - obsah stránky
+	- <head> - hlavička stránky
+		- <title> - popisek (v záložce)
+		- <meta charset="utf-8" /> - jazyková sada stránky
+	-<body> - tělo stránky
+
+<p> - paragraph
+<h1>..<h6> - heading
+<ul> - unordered list
+<li> - list item
+<div> - block of elements
+<img src="img/user1.jpg" alt="headshot" />
+
+===================================================================
+HTML Forms::
+--------------------------------------------------
+<form>
+	<label>Date</label>
+	<input />
+	<label>Location</label>
+	<input />
+	<input type="submit" value="Add" />
+</form>
+
+
+===================================================================
+Cascade Style Sheets (CSS Basics)::
+--------------------------------------------------
+
+Styling in HTML:
+- Style tags
+- Style blocks
+- Stylesheets
+
+můžeme napsat do <head> HTML stránky styl.
+
+<style>
+	body { // body je selektor - bude se to týkat veškerého obsahu v tagu <body>
+		font-family: sans-serif;
+		font-size: 14px;
+	}
+</style>
+
+lepší je to lifrovat do extra css souboru.
+wwwroot / css / site.css
+a pak už jen do <head> dané stránky napsat link na tento css soubor
+<link rel="stylesheet" href="css/site.css" />
+
+===================================================================
+CSS selectors::
+--------------------------------------------------
+
+body {} - všechny elementy budou mít tato pravidla
+
+label {font-weight:bold; display: block;} - všechny labely budou mít tato pravidla
+
+input {width:150px;} - všechny vstupy budou této šířky
+
+input[type=submit] {width:auto;} - výjimka, bude jiné šířky (overriding/bližší specifikace)
+
+input[type=text], input[type=password],textarea {width:150px;} 
+
+textarea = multiline input
+
+===================================================================
+CSS Naming::
+--------------------------------------------------
+<div id="sidebar"> <img .../><span>Sam Hastings</span></div>
+<div id="main"> ... </div>
+<div id="footer"> ... </div>
+
+id - one per page
+
+site.css:
+#main {background-color: #e9e9e9;}
+#footer {background-color: #eee; color:#222;}
+
+#sidebar img { max-width:50px;}
+
+Druhá možnost než použít id, je použití class. (Narozdíl od id, nemusí být na stránce jedinečné.)
+
+*.html:
+<img class="headshot">
+<ul class="menu">
+	<li class="active"><a href="#">Home</a></li>
+	<li><a href="#">About</a></li>
+</ul>
+
+*.css:
+.headshot {max-width:50px;}
+
+.menu {font-size:12px;} -
+
+.menu li {list-style-type:none;} - all items in menu
+
+.menu li .active {font-weight:bold;} - active item in menu
+
+===================================================================
+The Box Model::
+--------------------------------------------------
+Pravidla pro objekty vyskytující se na stránce.
+
+				    top
+				-----------
+left| margin - border - padding | Content | padding - border - margin |right
+				-----------
+				  bottom
+
+height, width = content
+actual-height, actual-width = content + padding + border
+
+.headshot {
+	border: 1px solid #222;
+	padding: 3px;
+	padding: 3px 3px 3px 3px;
+	margin: 0; // 0 je 0, není třeba specifikovat jednotku
+}
+
+#sidebar {
+	position: fixed; // na přesné pozici na stránce
+	left: 0; // ukotven vlevo
+	height: 100%; // přes celou výšku
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+===================================================================
+JavaScript::
+--------------------------------------------------
+- Quick Introduction Into the Language
+- Including JavaScript in Projects
+- What is jQuery
+- Using Bower for package management
+
+===================================================================
+Introduction::
+--------------------------------------------------
+- Client side app inside HTML.
+- Object Oriented
+- Prototypical Inheritance instead of Classes
+- Dynamic (it is not fixed during compiling time)
+- Not typeless, but dynamically typed
+- Just-In-Time compiled but without an intermediate format (e.g. MSIL, Bytecode)
+
+===================================================================
+Hello JavaScript::
+--------------------------------------------------
+Best practice je psat script dolů.
+    <!-- Bottom is best practice -->
+    <script type="text/javascript">
+        var ele = document.getElementById("username");
+        ele.innerHTML = "Shawn Wildermuth";
+    </script>
+</body>
+</html>
+
+===================================================================
+JavaScript Events::
+--------------------------------------------------
+
+var main = document.getElementById("main");
+main.onmouseleave = function () {
+    main.style.backgroundColor = '#888';
+    //main.style = "background: #888;";
+};
+
+main.onmouseleave = function () {
+    //main.style.backgroundColor = "";
+    main.style = "";
+};
+
+===================================================================
+JavaScript GlobalScope::
+--------------------------------------------------
+Problém je, když máme dva javasript soubory, 
+které deklarují stejnou proměnnou. První je pak překryt tím druhým.
+
+site1.js: var ele = ....
+site2.js: var ele = ....
+
+Jedno řešení je, použít unikátní názvy:
+var site1_js_ele = ....
+var site2_js_ele = ....
+
+Druhé řešení je nepoužít prověnné v měřítku Global Scope, ale naopak na úrovni Private Scope.
+
+GlobalScope:
+
+var ele = ....
+ele.innerHTML = ...
+var main = ...
+main.onmouseenter = ...
+
+
+PrivateScope:
+
+function startup() {
+  var ele = ....
+  ele.innerHTML = ...
+  var main = ...
+  main.onmouseenter = ...
+}
+
+startup();
+
+
+===================================================================
+JavaScript Using Bower::
+--------------------------------------------------
+- Managing dependencies 
+- It can simplify getting these packages and handling the dependency chains of those packages.
+- Je třeba přidát New Item / Client-side / Bower Configuration File > bower.json
+- Soubor bude ve struktuře uložen: Projekt/Dependencies/Bower/
+- balíčky se do této složky natáhnou samy a hned, co napíšeme novou dependency.
+- Pokud nějaký balíček má sám za sebe nějaké dependence, ty se automaticky přidají též.
+{
+	
+	"name": "asp.net",
+	
+	"private": true,
+  "dependencies": {    
+    
+		"underscore": "~1.8.3",
+		"jquery": "~2.1.4" // verze 2.1.4 nebo novější
+}
+
+- Pokud zapneme Show All Files, uvidíme v projektu bower.json,
+  který obsahuje podfile .bowerRC, ve kterém je konfigurace samotného boweru.
+  V něm je uvedena cesta, do které bude bower instalovat knihovny. (můžeme ji změnit)
+{
+  
+	"directory": "wwwroot/lib"
+
+}
+
+
+===================================================================
+JavaScript Introduction jQuery::
+--------------------------------------------------
+- JQuery exposes a single object to the GlobalScope for use, anywhere in these JavaScript files.
+  And that global object is called jQuery.
+- jQuery is a powerful ally in build complex pages.
+- tento objekt (jQuery) má alias "$".
+- jQuery obsahuje metody pro "network calls" a manipulaci s UI.
+- jQuery nás odstíní (vyřeší za nás) od rozdílných řešení pro rozdílné prohlížeče, či jejich verze. (víceméně)
+	=> handluje cross browser, multiple browser problémy.
+
+===================================================================
+JavaScript Practical jQuery::
+--------------------------------------------------
+site.js:
+ var $sidebarAndWrapper = $("#sidebar,#wrapper"); // nacteni dvou objektu do jedne promenne
+    
+    $("#sidebarToggle").on("click", function () {
+        $sidebarAndWrapper.toggleClass("hide-sidebar");
+
+        if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+            $(this).text("Show Sidebar");
+        } else {
+            $(this).text("Hide Sidebar");
+        }
+    });
+
+
+site.css:
+transition: left ease .25s; // transition zajistí plynulý přechod mezi stavy
+
+Rclick / Web Essentials / Add Missing Vendor Specifics, což doplní implementaci pro různé prohlížeče,
+které mají s klasickou implementací problém:
+
+-moz-transition: left ease .25s;
+-o-transition: left ease .25s;
+-webkit-transition: left ease .25s;
+transition: left ease .25s;
+
+-----
+
+#sidebar {
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+    margin: 0;
+    -moz-transition: left ease .25s;
+    -o-transition: left ease .25s;
+    -webkit-transition: left ease .25s;
+    transition: left ease .25s;
+}
+
+    #sidebar.hide-sidebar {
+        left: -250px;
+        -moz-transition: left ease .25s;
+        -o-transition: left ease .25s;
+        -webkit-transition: left ease .25s;
+        transition: left ease .25s;
+    }
+
+
+#wrapper {
+    margin: 0 0 0 250px;
+    -moz-transition: margin-left ease .25s;
+    -o-transition: margin-left ease .25s;
+    -webkit-transition: margin-left ease .25s;
+    transition: margin-left ease .25s;
+}
+    /*margin-left: 250px;*/
+
+    #wrapper.hide-sidebar {
+        margin-left: 0;
+        -moz-transition: margin-left ease .25s;
+        -o-transition: margin-left ease .25s;
+        -webkit-transition: margin-left ease .25s;
+        transition: margin-left ease .25s;
+    }
+
+
+===================================================================
+MVC6::
+--------------------------------------------------
+
+
+===================================================================
+::
+--------------------------------------------------
+
+===================================================================
+::
+--------------------------------------------------
+
+===================================================================
+::
+--------------------------------------------------
+

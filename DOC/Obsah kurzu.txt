@@ -1,0 +1,147 @@
+﻿Collapse all
+Course Overview				1m 46s
+===============================================
+What Is ASP.NET Core?			52m 58s
+----------------------------------------
+Introduction				1m 36s
+Why ASP.NET Core?			2m 57s
+What Is ASP.NET Core?			10m 26s
+Installing ASP.NET Core			3m 18s
+Hello World ASP.NET Core		7m 55s
+VS Code					10m 22s
+Visual Studio				14m 26s
+Where We're Headed			44s
+Summary					1m 9s
+===============================================
+HTML and CSS Basics			55m 15s
+----------------------------------------
+Introduction				33s
+What Is HTML?				2m 2s
+Serving Files in ASP.NET 		59m 38s
+HTML Basics				5m 43s
+HTML Forms				3m 30s
+CSS Basics				5m 8s
+CSS Selectors				5m 19s
+CSS Naming				11m 12s
+The Box Model				10m 23s
+Summary					1m 43s
+===============================================
+JavaScript				47m 18s
+----------------------------------------
+Introduction				31s
+What Is JavaScript?			2m 28s
+Hello JavaScript			6m 22s
+JavaScript Events			4m 28s
+Global Scope				4m 6s
+Using Bower				6m 12s
+Introducing jQuery			10m 13s
+Practical jQuery			10m 11s
+Summary					2m 44s
+===============================================
+MVC 6					1h 13m 44s
+----------------------------------------
+Introduction				32s
+First Controller/View			8m 14s
+Enabling MVC 				65m 51s
+Creating a Layout			5m 12s
+Adding More Views			10m 24s
+Using Tag Helpers			4m 46s
+Implementing a Contact Page		4m 4s
+Using Validation			7m 25s
+Supporting POST				2m 59s
+Adding a Service			10m 24s
+Completing the Form			12m 39s
+Summary					1m 7s
+===============================================
+Bootstrap				47m 17s
+----------------------------------------
+Introduction				34s
+Adding Bootstrap			13m 18s
+Using Bootswatch			3m 15s
+Building a NavBar			10m 28s
+The Grid System 			4m 22s
+Using the Grid System			5m 33s
+Bootstrap and Forms			5m 25s
+What about Bootstrap 4?			2m 21s
+Summary					1m 58s
+===============================================
+Entity Framework Core 1.0		48m 15s
+----------------------------------------
+Introduction				28s
+Creating Entities			5m 15s
+Creating the DbContext			2m 39s
+Using the DbContext			7m 58s
+Using Migrations			7m 25s
+Seeding the Database			7m 33s
+The Repository Pattern			8m 3s
+Logging					6m 44s
+Summary					2m 5s
+===============================================
+Creating the API			1h 8m 42s
+----------------------------------------
+Introduction				30s
+Create an API Controller		4m 41s
+Returning Data				3m 11s
+Using POST				5m 44s
+Validation and View Models		6m 35s
+Using AutoMapper			9m 31s
+Using Logging				3m 27s
+Saving to the Database			5m 27s
+The Stop Controller			9m 18s
+Saving New Stops			4m 43s
+Implementing a Service			11m 13s
+Using the Service			2m 26s
+Summary					1m 52s
+===============================================
+ASP.NET Identity			53m 26s
+----------------------------------------
+Introduction				32s
+What Is ASP.NET 5 Identity?		1m 0s
+Authorizing Actions			3m 36s
+Storing Identities in the Database	9m 6s
+Configuring Identity			4m 26s
+Designing the Login View		5m 36s
+Implement Login and Logout		10m 26s
+Use Identity in the API			7m 14s
+Use Identity in Trips Controller	4m 15s
+Use Identity in the Stops Controller	5m 52s
+Summary					1m 18s
+===============================================
+AngularJS				52m 21s
+----------------------------------------
+Introduction				2m 7s
+Hello AngularJS				5m 57s
+Your First Controller			6m 22s
+Basic Data Binding			4m 17s
+Handling Forms				4m 28s
+Validating Forms			6m 13s
+Retrieving Data with AngularJS		7m 13s
+Creating Data with AngularJS		3m 12s
+Creating a Directive			10m 59s
+Summary					1m 28s
+===============================================
+AngularJS Routing			43m 24s
+----------------------------------------
+Introduction				31s
+Adding Routing				3m 50s
+Creating Views				3m 34s
+Second View				7m 19s
+Implementing the Editor			7m 9s
+Calling the API				1m 39s
+Using a Non-AngularJS Plugin		9m 28s
+Validating a New Stop			4m 55s
+Creating a New Stop			3m 23s
+Summary					1m 32s
+===============================================
+ASP.NET Core Deployment			29m 21s
+----------------------------------------
+Introduction				1m 0s
+Minifying Your JavaScript		3m 38s
+Minifying Your JavaScript - Continued	5m 3s
+Using Minified JavaScript		4m 27s
+Minifying AngularJS Code		1m 34s
+Readying for Deployment			2m 53s
+Publishing with Visual Studio		4m 52s
+Publishing with the Command-line	4m 27s
+Summary					1m 22s
+===============================================

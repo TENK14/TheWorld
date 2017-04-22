@@ -12,6 +12,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TheWorld", "src\TheWorld\TheWorld.xproj", "{F1C1E841-5362-47A5-9869-45A741B9C922}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{39044B67-04DA-4241-879D-4E2E3712F1AF}"
+	ProjectSection(SolutionItems) = preProject
+		DOC\Description.txt = DOC\Description.txt
+		DOC\Obsah kurzu.txt = DOC\Obsah kurzu.txt
+		DOC\poznamky.txt = DOC\poznamky.txt
+		DOC\Transcript.txt = DOC\Transcript.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "excercise files", "excercise files", "{224415D5-E22E-4A96-A9FB-5B4FCEC82CF4}"
+	ProjectSection(SolutionItems) = preProject
+		DOC\excercise files\aspdotnetcore-efcore-bootstrap-angular-web-app.zip = DOC\excercise files\aspdotnetcore-efcore-bootstrap-angular-web-app.zip
+		DOC\excercise files\Web Extension Pack 2015 v1.9.55.vsix = DOC\excercise files\Web Extension Pack 2015 v1.9.55.vsix
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots", "{89E6A856-1B4F-4AF9-996A-9541DB9993BC}"
+	ProjectSection(SolutionItems) = preProject
+		DOC\screenshots\000-CourseOverview-Kapitoly.PNG = DOC\screenshots\000-CourseOverview-Kapitoly.PNG
+		DOC\screenshots\001-CourseOverview-VerzeFrameworku.PNG = DOC\screenshots\001-CourseOverview-VerzeFrameworku.PNG
+		DOC\screenshots\002-Overview-ArchitekturaAspDotNetCore.PNG = DOC\screenshots\002-Overview-ArchitekturaAspDotNetCore.PNG
+		DOC\screenshots\003-ThreeFrameworks.PNG = DOC\screenshots\003-ThreeFrameworks.PNG
+		DOC\screenshots\004-CoreCLRIsSubsetOfDotNetFramework.PNG = DOC\screenshots\004-CoreCLRIsSubsetOfDotNetFramework.PNG
+		DOC\screenshots\005-EmbracesOpenWebDevelopment.PNG = DOC\screenshots\005-EmbracesOpenWebDevelopment.PNG
+		DOC\screenshots\006-Installers.PNG = DOC\screenshots\006-Installers.PNG
+		DOC\screenshots\007-Summary.PNG = DOC\screenshots\007-Summary.PNG
+		DOC\screenshots\008-BoxModel.PNG = DOC\screenshots\008-BoxModel.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +55,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F1C1E841-5362-47A5-9869-45A741B9C922} = {4F46FCD0-D25E-4545-A8A6-72D13A28DE0D}
+		{224415D5-E22E-4A96-A9FB-5B4FCEC82CF4} = {39044B67-04DA-4241-879D-4E2E3712F1AF}
+		{89E6A856-1B4F-4AF9-996A-9541DB9993BC} = {39044B67-04DA-4241-879D-4E2E3712F1AF}
 	EndGlobalSection
 EndGlobal
